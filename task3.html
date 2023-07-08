@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #100f1f;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .search-container {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 45px;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: #ff4f4f;
+      border-radius: 45px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      animation: fade-in 1s ease-out;
+    }
+
+    .menu-item-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 65px 65px 65px 65px;
+      animation: zoom-in 1s ease-out;
+    }
+
+    .menu-item-details {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .menu-item-name {
+      font-size: 34px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333333;
+    }
+
+    .menu-item-description {
+      margin: auto;
+      font-size: 18px;
+      color:  black;
+      margin-bottom: 10px;
+    }
+
+    .menu-item-price {
+      font-weight: bold;
+      font-size: 20px;
+      color: black;
+      text-align: right;
+    }
+
+    .menu-item-quantity {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .menu-item-quantity-label {
+      margin-right: 10px;
+      font-size: 16px;
+      color: black;
+    }
+
+    .menu-item-quantity-value {
+      font-size: 16px;
+      color: black;
+      padding: 5px;
+      border: 1px solid black;
+      border-radius: 5px;
+      width: 40px;
+      text-align: center;
+    }
+
+    .menu-item-buy {
+      font-size: 20px;
+      color: black;
+      background-color: green;
+      border: none;
+      border-radius: 45px;
+      padding: 8px 20px;
+      cursor: pointer;
+      align-self: center;
+    }
+
+    /* Animations */
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoom-in {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="search-container">
+      <input id="search-input" class="search-input" type="text" placeholder="Search for a dish...">
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu1.jpeg" alt="Menu 1">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Gobi Lollipop</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">45 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu2.jpeg" alt="Menu 2">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Gobi Manchurian</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">60 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu3.jpeg" alt="Menu 3">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Gobi Chilli</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">55 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu4.webp" alt="Menu 4">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Paneer chilli</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">60 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu5.webp" alt="Menu 5">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Finger Chips</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">40 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu6.jpeg" alt="Menu 6">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Crispy Potato</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">50 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu7.jpeg" alt="Menu 7">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Veg Chilli</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">45 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu8.jpeg" alt="Menu 8">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Chicken Lollipop</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">70 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu9.jpeg" alt="Menu 9">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Chicken Chilli</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">70 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu10.jpeg" alt="Menu 10">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Chicken Dry Fry</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">75 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu11.jpeg" alt="Menu 11">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Chicken Pakora</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">90 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu12.jpeg" alt="Menu 12">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Egg Chilli</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">80 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu13.jpeg" alt="Menu 13">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Chicken Dahi Bala</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">70 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu14.jpeg" alt="Menu 14">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Bonless Kadai Chicken</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">75 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu15.jpeg" alt="Menu 15">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Chicken Rajala</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">75 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+    
+    <div id="menu-details-container"></div>
+    <div class="menu-item">
+      <img class="menu-item-image" src="img/menu16.jpeg" alt="Menu 16">
+      <div class="menu-item-details">
+        <div class="menu-item-name">Lemon Chicken Pakoda</div>
+        <div class="menu-item-description">Kiss me hard before you go Summertime sadness I just wanted you to know That baby, you the bes I got my red dress on tonigh Dancin' in the dark, in the pale moonlightDone my hair up real big, beauty queen style  High heels off, I'm feelin' alive</div>
+        <div class="menu-item-price">100 Rs</div>
+        <div class="menu-item-quantity">
+          <label class="menu-item-quantity-label">Quantity:</label>
+          <input class="menu-item-quantity-value" type="number" value="1" min="1">
+        </div>
+        <button class="menu-item-buy">Buy</button>
+      </div>
+    </div>
+</body>
+</html>

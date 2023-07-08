@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eateries at IIT Kharagpur</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .search-container {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 40px 10px 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 45px;
+    }
+
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: #666666;
+    }
+
+    .autocomplete-container {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 45px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      display: none;
+    }
+
+    .autocomplete-option {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .autocomplete-option:hover {
+      background-color: #f5f5f5;
+    }
+
+    .eatery {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border-radius: 45px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      animation: fade-in 1s ease-out;
+    }
+
+    .eatery-image {
+      width: 150px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 45px 0 0 45px;
+      animation: zoom-in 1s ease-out;
+    }
+
+    .eatery-details {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .eatery-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333333;
+    }
+
+    .eatery-location {
+      font-size: 18px;
+      color: #666666;
+      margin-bottom: 10px;
+    }
+
+    .view-menu-button {
+      background-color: #009688;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 45px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .view-menu-button:hover {
+      background-color: #00796b;
+    }
+
+    /* Animations */
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+   }
+
+    @keyframes zoom-in {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="search-container">
+      <input class="search-input" type="text" placeholder="Search for an eatery..." autocomplete="off">
+      <i class="fas fa-search search-icon"></i>
+      <div class="autocomplete-container"></div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall1.webp" alt="Eatery 1">
+      <div class="eatery-details">
+        <div class="eatery-name">BRH hall canteen</div>
+        <div class="eatery-location">BRH hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+        <div class="eatery-contact">Contact: 1234567890</div>
+        <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall2.jpeg" alt="Eatery 2">
+      <div class="eatery-details">
+        <div class="eatery-name">VS hall canteen</div>
+        <div class="eatery-location">VS hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall3.jpeg" alt="Eatery 3">
+      <div class="eatery-details">
+        <div class="eatery-name">SNIG hall canteen</div>
+        <div class="eatery-location">SNIG hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall4.jpeg" alt="Eatery 4">
+      <div class="eatery-details">
+        <div class="eatery-name">RP hall canteen</div>
+        <div class="eatery-location">RP hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall6.webp" alt="Eatery 5">
+      <div class="eatery-details">
+        <div class="eatery-name">Patel hall canteen</div>
+        <div class="eatery-location">Patel hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall5.jpeg" alt="Eatery 6">
+      <div class="eatery-details">
+        <div class="eatery-name">SNVH hall canteen</div>
+        <div class="eatery-location">SNVH hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall7.jpeg" alt="Eatery 7">
+      <div class="eatery-details">
+        <div class="eatery-name">RK hall canteen</div>
+        <div class="eatery-location">Rk hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall8.jpeg" alt="Eatery 8">
+      <div class="eatery-details">
+        <div class="eatery-name">Nehru hall canteen</div>
+        <div class="eatery-location">Nehru hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall9.jpeg" alt="Eatery 9">
+      <div class="eatery-details">
+        <div class="eatery-name">MT hall canteen</div>
+        <div class="eatery-location">MT hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall10.avif" alt="Eatery 10">
+      <div class="eatery-details">
+        <div class="eatery-name">MS hall canteen</div>
+        <div class="eatery-location">MS hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall11.jpeg" alt="Eatery 11">
+      <div class="eatery-details">
+        <div class="eatery-name">MMM hall canteen</div>
+        <div class="eatery-location">MMM hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall12.jpeg" alt="Eatery 12">
+      <div class="eatery-details">
+        <div class="eatery-name">LBS hall canteen</div>
+        <div class="eatery-location">LBS hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall13.jpeg" alt="Eatery 13">
+      <div class="eatery-details">
+        <div class="eatery-name">LLR hall canteen</div>
+        <div class="eatery-location">LLR hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall14.jpeg" alt="Eatery 14">
+      <div class="eatery-details">
+        <div class="eatery-name">JCB hall canteen</div>
+        <div class="eatery-location">JCB hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall15.jpeg" alt="Eatery 15">
+      <div class="eatery-details">
+        <div class="eatery-name">HJB hall canteen</div>
+        <div class="eatery-location">HJB hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall16.jpeg" alt="Eatery 16">
+      <div class="eatery-details">
+        <div class="eatery-name">Gokhale hall canteen</div>
+        <div class="eatery-location">Gokhale hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='menu.html?eatery=3'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPhall17.jpeg" alt="Eatery 17">
+      <div class="eatery-details">
+        <div class="eatery-name">SNVH hall canteen</div>
+        <div class="eatery-location">SNVH hall,IIT Kharagpur, Campus, Kharagpur, West Bengal, 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPtikka.jpeg" alt="Eatery 18">
+      <div class="eatery-details">
+        <div class="eatery-name">Tikka</div>
+        <div class="eatery-location">Tikka, IIT Main Rd, IIT Kharagpur, Campas, Kharagpur, West Bengal 721302 </div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPPFC.jpeg" alt="Eatery 19">
+      <div class="eatery-details">
+        <div class="eatery-name">PFC</div>
+        <div class="eatery-location">Shop No. Oval 3, Inside IIT Kharagpur Campus, Near Patel Hall, Pan Loop, Kharagpur, West Bengal 721302 </div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPheritage.jpeg" alt="Eatery 20">
+      <div class="eatery-details">
+        <div class="eatery-name">Heritage</div>
+        <div class="eatery-location">Scholars Ave, IIT Kharagpur, Kharagpur, West Bengal 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+
+    <div class="eatery">
+      <img class="eatery-image" src="img/IITKGPsmart.jpeg" alt="Eatery 21">
+      <div class="eatery-details">
+        <div class="eatery-name">Smart pind</div>
+        <div class="eatery-location">Scholars Ave, IIT Kharagpur, Kharagpur, West Bengal 721302</div>
+         <div class="eatery-contact">Contact: 1234567890</div>
+         <br>
+        <button class="view-menu-button" onclick="location.href='http://127.0.0.1:5500/task3.html'">View Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.querySelector('.search-input');
+    const autocompleteContainer = document.querySelector('.autocomplete-container');
+
+    const eateries = [
+      { name: 'BRH hall canteen', location: 'BRH hall', image: 'img/IITKGPhall1.webp' },
+      { name: 'VS hall canteen', location: 'VS hall', image: 'img/IITKGPhall2.jpeg' },
+      { name: 'SNIG hall canteen', location: 'SNIG hall', image: 'img/IITKGPhall3.jpeg' },
+      { name: 'RP hall canteen', location: 'RP hall', image: 'img/IITKGPhall4.jpeg' },
+      { name: 'SNVH hall canteen', location: 'SNVH hall', image: 'img/IITKGPhall5.jpeg' },
+      { name: 'Patel hall canteen', location: 'Patel hall', image: 'img/IITKGPhall6.webp' },
+      { name: 'RK hall canteen', location: 'RK hall', image: 'img/IITKGPhall7.jpeg' },
+      { name: 'Nehru hall canteen', location: 'Nehru hall', image: 'img/IITKGPhall8.jpeg' },
+      { name: 'MT hall canteen', location: 'MT hall', image: 'img/IITKGPhall9.jpeg' },
+      { name: 'MS hall canteen', location: 'MS hall', image: 'img/IITKGPhall10.avif' },
+      { name: 'MMM hall canteen', location: 'MMM hall', image: 'img/IITKGPhall11.jpeg' },
+      { name: 'LBS hall canteen', location: 'LBS hall', image: 'img/IITKGPhall12.jpeg' },
+      { name: 'LLR hall canteen', location: 'LLR hall', image: 'img/IITKGPhall13.jpeg' },
+      { name: 'JCB hall canteen', location: 'JCB hall', image: 'img/IITKGPhall14.jpeg' },
+      { name: 'HJB hall canteen', location: 'HJB hall', image: 'img/IITKGPhall15.jpeg' },
+      { name: 'Gokhale hall canteen', location: 'Gokhale hall', image: 'img/IITKGPhall16.jpeg' },
+      { name: 'Azad hall canteen', location: 'Azad hall', image: 'img/IITKGPhall17.jpeg' },
+      { name: 'Tikka', location: 'Tikka, IIT Main Rd, IIT Kharagpur, Campas, Kharagpur, West Bengal 721302 ', image: 'img/IITKGPtikka.jpeg' },
+      { name: 'PFC', location: 'hop No. Oval 3, Inside IIT Kharagpur Campus, Near Patel Hall, Pan Loop, Kharagpur, West Bengal 721302', image: 'img/IITKGPPFC.jpeg' },
+      { name: 'Heritage', location: 'Scholars Ave, IIT Kharagpur, Kharagpur, West Bengal 721302', image: 'img/IITKGPheritage.jpeg' },
+      { name: 'Smart pind', location: 'Scholars Ave, IIT Kharagpur, Kharagpur, West Bengal 721302', image: 'img/IITKGPsmart.jpeg' },
+  ]
+    
+      function showAutocompleteOptions(input) {
+      
+      autocompleteContainer.innerHTML = '';
+
+      const filteredEateries = eateries.filter(eatery => {
+        const searchValue = input.value.toLowerCase();
+        return eatery.name.toLowerCase().includes(searchValue);
+      });
+
+      filteredEateries.forEach(eatery => {
+        const option = document.createElement('div');
+        option.classList.add('autocomplete-option');
+        option.textContent = eatery.name;
+        option.addEventListener('click', () => {
+          input.value = eatery.name;
+          autocompleteContainer.style.display = 'none';
+        });
+        autocompleteContainer.appendChild(option);
+      });
+
+      if (filteredEateries.length > 0) {
+        autocompleteContainer.style.display = 'block';
+      } else {
+        autocompleteContainer.styledisplay = 'none';
+      }
+    }
+
+    searchInput.addEventListener('input', () => {
+      showAutocompleteOptions(searchInput);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.search-container')) {
+        autocompleteContainer.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to IIT Kharagpur</title>
+  <style>
+    /* CSS styles for the page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+      animation: slide-in 1s ease-out;
+    }
+    .logo {
+      width: 150px;
+      height: 150px;
+      background-image: url("IITKGPlogo.png");
+      background-size: cover;
+      margin-bottom: 20px;
+      
+    }
+    .title {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333333;
+      margin-bottom: 20px;
+      animation: fade-in 2s ease-out;
+    }
+    .subtitle {
+      font-size: 24px;
+      color: #666666;
+      margin-bottom: 40px;
+      animation: fade-in 2s ease-out;
+    }
+    .campus-photos {
+      width: 250px;
+      height: 200px;
+      margin: 0 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+      animation: fade-in 2s ease-out;
+    }
+    .photo {
+      width: 250px;
+      height: 200px;
+      margin: 0 10px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      animation: zoom-in 2s ease-out;
+    }
+    .photo:nth-child(1) {
+      background-image: url("photo1.jpg");
+      animation-delay: 0.2s;
+    }
+    .photo:nth-child(2) {
+      background-image: url("photo2.jpg");
+      animation-delay: 0.2s;
+    }
+    .photo:nth-child(3) {
+      background-image: url("photo3.jpg");
+      animation-delay: 0.2s;
+    }
+    .photo:nth-child(4) {
+      background-image: url("photo4.jpg");
+      animation-delay: 0.2s;
+    }
+    .photo:nth-child(5) {
+      background-image: url("photo5.jpg");
+      animation-delay: 0.2s;
+    }
+    .photo:nth-child(6) {
+      background-image: url("photo6.jpg");
+      animation-delay: 0.2s;
+    }
+    .description {
+      font-size: 18px;
+      color: #555555;
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fade-in 2s ease-out;
+    }
+    .footer {
+      font-size: 14px;
+      color: #999999;
+      position: fixed;
+      bottom: 10px;
+      animation: fade-in 2s ease-out;
+    }
+    .social-media-links {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-media-link {
+      margin: 0 10px;
+      color: #333333;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .social-media-link:hover {
+      color: #666666;
+    }
+    .start {
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .explore {
+      background-color: darkblue;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 45px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    /* Animations */
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes slide-in {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes zoom-in {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes shake {
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-5px);
+      }
+      75% {
+        transform: translateX(5px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="logo"><img src="img/IITKGPlogo.png"alt="IIT Kharagpur Logo" class="logo"></section>
+    <div class="title">Welcome to IIT Kharagpur</div>
+    <div class="subtitle">Explore the Campus and Discover Excellence</div>
+    <div class="campus-photos">
+        <div class="photo"><img src="img/IITKGPcampus8.jpeg"alt="" class="campus-photos"></div>
+        <div class="photo"><img src="img/IITKGPcampus2.png"alt="" class="campus-photos"></div>
+        <div class="photo"><img src="img/IITKGPcampus3.jpeg"alt="" class="campus-photos"></div>
+        <div class="photo"><img src="img/IITKGPcampus4.jpeg"alt="" class="campus-photos"></div>
+        <div class="photo"><img src="img/IITKGPcampus5.jpeg"alt="" class="campus-photos"></div>
+        <div class="photo"><img src="img/IITKGPcampus6.webp"alt="" class="campus-photos"></div>
+    </div>
+    <div class="description">
+        Indian Institute of Technology Kharagpur, commonly known as IIT Kharagpur or IITKGP, is a prestigious public technical and research university located in Kharagpur, West Bengal, India. Established in 1951, it is the oldest and largest IIT in terms of infrastructure and the number of students. The institute offers a wide range of undergraduate, postgraduate, and doctoral programs in various fields of engineering, science, architecture, and management.
+    </div>
+    <div class="start">
+        <a class="explore" href="http://127.0.0.1:5500/task2.html" target="-blank">Explore</a>
+    </div>
+    <br><br><br>
+    <div class="social-media-links">
+        <a class="social-media-link" href="https://www.facebook.com/iit.kgp" target="_blank">Facebook</a>
+        <a class="social-media-link" href="https://twitter.com/IITKgp" target="_blank">Twitter</a>
+        <a class="social-media-link" href="https://www.instagram.com/iit.kgp/" target="_blank">Instagram</a>
+        <a class="social-media-link" href="https://www.linkedin.com/school/iit-kharagpur/" target="_blank">LinkedIn</a>
+      </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2023 IIT Kharagpur. All rights reserved.
+  </div>
+</body>
+</html>
